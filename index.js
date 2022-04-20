@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   res.status(200).send({
-    message: "welcome zaky runner aja dari github actions dino tes dari local",
+    message: "coba tes dari runner",
   });
 });
 
