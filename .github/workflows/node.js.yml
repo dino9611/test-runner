@@ -5,21 +5,20 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: self-hosted
 
-#     strategy:
-#       matrix:
-#         node-version: [16.x]
-#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    #     strategy:
+    #       matrix:
+    #         node-version: [16.x]
+    #         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - run: npm install
-    - run: pm2 restart express-runner
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: PM2_HOME="/root/.pm2" pm2 restart express-runner
